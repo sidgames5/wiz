@@ -16,6 +16,15 @@ class WizPM {
 					Console.log("Usage: wiz install [packages]");
 					return;
 				}
+				for (package in plist) {
+					if (ProcessHandler.validatePackage(package)) {
+						var binary = ProcessHandler.fetchPackage(package);
+						File.saveContent("wiztemp.tmp.exe", binary);
+					} else {
+						Console.warn("Unable to install package " + package + ": no package found in library");
+						return;
+					}
+				}
 				break;
 		}
 		

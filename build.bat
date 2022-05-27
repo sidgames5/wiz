@@ -3,6 +3,7 @@
 if %1==wizpm (
 	fsutil file createnew compilertemp1.hxml 0
 	echo --class-path>compilertemp1.hxml
+	echo -lib Console.hx>compilertemp1.hxml
 	echo --main tech.infynyt.wiz.WizPM>compilertemp1.hxml
 	echo --cpp bin/lib>compilertemp1.hxml
 	haxe compilertemp1.hxml

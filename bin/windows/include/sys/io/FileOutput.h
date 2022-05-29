@@ -53,8 +53,6 @@ class HXCPP_CLASS_ATTRIBUTES FileOutput_obj : public  ::haxe::io::Output_obj
 
 		int writeBytes( ::haxe::io::Bytes s,int p,int l);
 
-		void close();
-
 };
 
 } // end namespace sys

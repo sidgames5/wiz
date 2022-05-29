@@ -9,12 +9,6 @@
 #ifndef INCLUDED_tech_infynyt_wiz_WizPM
 #include <tech/infynyt/wiz/WizPM.h>
 #endif
-#ifndef INCLUDED_tech_infynyt_wiz_ProcessHandler
-#include <tech/infynyt/wiz/ProcessHandler.h>
-#endif
-#ifndef INCLUDED_haxe_Log
-#include <haxe/Log.h>
-#endif
 #ifndef INCLUDED__Console_FormatFlag_Impl_
 #include <_Console/FormatFlag_Impl_.h>
 #endif
@@ -24,12 +18,6 @@
 #ifndef INCLUDED_sys_io_FileOutput
 #include <sys/io/FileOutput.h>
 #endif
-#ifndef INCLUDED_sys_io_File
-#include <sys/io/File.h>
-#endif
-#ifndef INCLUDED_sys_Http
-#include <sys/Http.h>
-#endif
 #ifndef INCLUDED_haxe_iterators_ArrayIterator
 #include <haxe/iterators/ArrayIterator.h>
 #endif
@@ -38,12 +26,6 @@
 #endif
 #ifndef INCLUDED_haxe_io_BytesBuffer
 #include <haxe/io/BytesBuffer.h>
-#endif
-#ifndef INCLUDED_haxe_http_HttpBase
-#include <haxe/http/HttpBase.h>
-#endif
-#ifndef INCLUDED_haxe_format_JsonParser
-#include <haxe/format/JsonParser.h>
 #endif
 #ifndef INCLUDED_haxe_exceptions_NotImplementedException
 #include <haxe/exceptions/NotImplementedException.h>
@@ -62,9 +44,6 @@
 #endif
 #ifndef INCLUDED_StringBuf
 #include <StringBuf.h>
-#endif
-#ifndef INCLUDED_Reflect
-#include <Reflect.h>
 #endif
 #ifndef INCLUDED_EReg
 #include <EReg.h>
@@ -109,25 +88,18 @@ __files__boot();
 ::haxe::io::Error_obj::__register();
 ::haxe::io::Encoding_obj::__register();
 ::tech::infynyt::wiz::WizPM_obj::__register();
-::tech::infynyt::wiz::ProcessHandler_obj::__register();
-::haxe::Log_obj::__register();
 ::_Console::FormatFlag_Impl__obj::__register();
 ::Console_obj::__register();
 ::sys::io::FileOutput_obj::__register();
-::sys::io::File_obj::__register();
-::sys::Http_obj::__register();
 ::haxe::iterators::ArrayIterator_obj::__register();
 ::haxe::io::Eof_obj::__register();
 ::haxe::io::BytesBuffer_obj::__register();
-::haxe::http::HttpBase_obj::__register();
-::haxe::format::JsonParser_obj::__register();
 ::haxe::exceptions::NotImplementedException_obj::__register();
 ::haxe::exceptions::PosException_obj::__register();
 ::haxe::ValueException_obj::__register();
 ::haxe::NativeStackTrace_obj::__register();
 ::haxe::Exception_obj::__register();
 ::StringBuf_obj::__register();
-::Reflect_obj::__register();
 ::EReg_obj::__register();
 ::haxe::ds::StringMap_obj::__register();
 ::haxe::IMap_obj::__register();
@@ -141,10 +113,8 @@ __files__boot();
 ::sys::io::Process_obj::__register();
 ::haxe::io::Error_obj::__boot();
 ::haxe::io::Encoding_obj::__boot();
-::haxe::Log_obj::__boot();
 ::Console_obj::__boot();
 ::_Console::FormatFlag_Impl__obj::__boot();
-::tech::infynyt::wiz::ProcessHandler_obj::__boot();
 ::tech::infynyt::wiz::WizPM_obj::__boot();
 }
 

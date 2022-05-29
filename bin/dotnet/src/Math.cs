@@ -6,8 +6,6 @@ public class Math {
 	}
 	
 	
-	public static readonly double NaN = global::System.Double.NaN;
-	
 	public static readonly double POSITIVE_INFINITY = global::System.Double.PositiveInfinity;
 	
 	public static int round(double v) {

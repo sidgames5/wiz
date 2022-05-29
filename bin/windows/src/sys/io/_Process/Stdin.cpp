@@ -17,7 +17,6 @@
 #endif
 
 HX_DEFINE_STACK_FRAME(_hx_pos_f1dc2a72381c14cb_31_new,"sys.io._Process.Stdin","new",0xd3131563,"sys.io._Process.Stdin.new","C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/Process.hx",31,0x19dec630)
-HX_LOCAL_STACK_FRAME(_hx_pos_f1dc2a72381c14cb_36_close,"sys.io._Process.Stdin","close",0xbd3fe37b,"sys.io._Process.Stdin.close","C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/Process.hx",36,0x19dec630)
 HX_LOCAL_STACK_FRAME(_hx_pos_f1dc2a72381c14cb_41_writeByte,"sys.io._Process.Stdin","writeByte",0xfb987cca,"sys.io._Process.Stdin.writeByte","C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/Process.hx",41,0x19dec630)
 HX_LOCAL_STACK_FRAME(_hx_pos_f1dc2a72381c14cb_47_writeBytes,"sys.io._Process.Stdin","writeBytes",0x29d4b469,"sys.io._Process.Stdin.writeBytes","C:\\HaxeToolkit\\haxe\\std/cpp/_std/sys/io/Process.hx",47,0x19dec630)
 namespace sys{
@@ -48,13 +47,6 @@ bool Stdin_obj::_hx_isInstanceOf(int inClassId) {
 		return inClassId==(int)0x0a55a26d;
 	}
 }
-
-void Stdin_obj::close(){
-            	HX_STACKFRAME(&_hx_pos_f1dc2a72381c14cb_36_close)
-HXLINE(  37)		this->super::close();
-HXLINE(  38)		_hx_std_process_stdin_close(this->p);
-            	}
-
 
 void Stdin_obj::writeByte(int c){
             	HX_STACKFRAME(&_hx_pos_f1dc2a72381c14cb_41_writeByte)
@@ -126,9 +118,6 @@ void Stdin_obj::__Visit(HX_VISIT_PARAMS)
 	case 3:
 		if (HX_FIELD_EQ(inName,"buf") ) { return ::hx::Val( buf ); }
 		break;
-	case 5:
-		if (HX_FIELD_EQ(inName,"close") ) { return ::hx::Val( close_dyn() ); }
-		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"writeByte") ) { return ::hx::Val( writeByte_dyn() ); }
 		break;
@@ -169,7 +158,6 @@ static ::hx::StaticInfo *Stdin_obj_sStaticStorageInfo = 0;
 static ::String Stdin_obj_sMemberFields[] = {
 	HX_("p",70,00,00,00),
 	HX_("buf",33,c3,4a,00),
-	HX_("close",b8,17,63,48),
 	HX_("writeByte",87,13,d7,49),
 	HX_("writeBytes",0c,03,5a,52),
 	::String(null()) };

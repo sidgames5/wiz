@@ -61,19 +61,9 @@
 	
     <Compile Include="src\haxe\io\Output.cs"/>
 	
-    <Compile Include="src\sys\Http.cs"/>
-	
-    <Compile Include="src\haxe\http\HttpBase.cs"/>
-	
-    <Compile Include="src\haxe\Log.cs"/>
-	
     <Compile Include="src\Array.cs"/>
 	
     <Compile Include="src\cs\internal\Function.cs"/>
-	
-    <Compile Include="src\tech\infynyt\wiz\ProcessHandler.cs"/>
-	
-    <Compile Include="src\haxe\format\JsonParser.cs"/>
 	
     <Compile Include="src\haxe\exceptions\PosException.cs"/>
 	
@@ -88,8 +78,6 @@
     <Compile Include="src\Type.cs"/>
 	
     <Compile Include="src\haxe\SysTools.cs"/>
-	
-    <Compile Include="src\sys\io\FileOutput.cs"/>
 	
     <Compile Include="src\haxe\io\Error.cs"/>
 	
@@ -128,8 +116,6 @@
     <Compile Include="src\Math.cs"/>
 	
     <Compile Include="src\cs\internal\FieldLookup.cs"/>
-	
-    <Compile Include="src\sys\io\File.cs"/>
 	
     <Compile Include="src\haxe\io\BytesBuffer.cs"/>
 	

@@ -24,7 +24,6 @@
 
 HX_LOCAL_STACK_FRAME(_hx_pos_f6deb7e554df00ae_47_writeByte,"haxe.io.Output","writeByte",0xb4fe513a,"haxe.io.Output.writeByte","C:\\HaxeToolkit\\haxe\\std/haxe/io/Output.hx",47,0x05ec9a64)
 HX_LOCAL_STACK_FRAME(_hx_pos_f6deb7e554df00ae_57_writeBytes,"haxe.io.Output","writeBytes",0xa988c1f9,"haxe.io.Output.writeBytes","C:\\HaxeToolkit\\haxe\\std/haxe/io/Output.hx",57,0x05ec9a64)
-HX_LOCAL_STACK_FRAME(_hx_pos_f6deb7e554df00ae_92_close,"haxe.io.Output","close",0xe726bfeb,"haxe.io.Output.close","C:\\HaxeToolkit\\haxe\\std/haxe/io/Output.hx",92,0x05ec9a64)
 HX_LOCAL_STACK_FRAME(_hx_pos_f6deb7e554df00ae_121_writeFullBytes,"haxe.io.Output","writeFullBytes",0xc2c420ea,"haxe.io.Output.writeFullBytes","C:\\HaxeToolkit\\haxe\\std/haxe/io/Output.hx",121,0x05ec9a64)
 HX_LOCAL_STACK_FRAME(_hx_pos_f6deb7e554df00ae_278_writeString,"haxe.io.Output","writeString",0x97e1cb83,"haxe.io.Output.writeString","C:\\HaxeToolkit\\haxe\\std/haxe/io/Output.hx",278,0x05ec9a64)
 namespace haxe{
@@ -87,13 +86,6 @@ HXLINE(  79)		return len;
 
 HX_DEFINE_DYNAMIC_FUNC3(Output_obj,writeBytes,return )
 
-void Output_obj::close(){
-            	HX_STACKFRAME(&_hx_pos_f6deb7e554df00ae_92_close)
-            	}
-
-
-HX_DEFINE_DYNAMIC_FUNC0(Output_obj,close,(void))
-
 void Output_obj::writeFullBytes( ::haxe::io::Bytes s,int pos,int len){
             	HX_STACKFRAME(&_hx_pos_f6deb7e554df00ae_121_writeFullBytes)
 HXDLIN( 121)		while((len > 0)){
@@ -123,9 +115,6 @@ Output_obj::Output_obj()
 ::hx::Val Output_obj::__Field(const ::String &inName,::hx::PropertyAccess inCallProp)
 {
 	switch(inName.length) {
-	case 5:
-		if (HX_FIELD_EQ(inName,"close") ) { return ::hx::Val( close_dyn() ); }
-		break;
 	case 9:
 		if (HX_FIELD_EQ(inName,"writeByte") ) { return ::hx::Val( writeByte_dyn() ); }
 		break;
@@ -149,7 +138,6 @@ static ::hx::StaticInfo *Output_obj_sStaticStorageInfo = 0;
 static ::String Output_obj_sMemberFields[] = {
 	HX_("writeByte",87,13,d7,49),
 	HX_("writeBytes",0c,03,5a,52),
-	HX_("close",b8,17,63,48),
 	HX_("writeFullBytes",7d,e7,66,a4),
 	HX_("writeString",10,7b,29,a6),
 	::String(null()) };

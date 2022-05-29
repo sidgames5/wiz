@@ -10,13 +10,8 @@ src\cs\Boot.cs
 src\Std.cs
 src\haxe\lang\Null.cs
 src\haxe\io\Output.cs
-src\sys\Http.cs
-src\haxe\http\HttpBase.cs
-src\haxe\Log.cs
 src\Array.cs
 src\cs\internal\Function.cs
-src\tech\infynyt\wiz\ProcessHandler.cs
-src\haxe\format\JsonParser.cs
 src\haxe\exceptions\PosException.cs
 src\haxe\io\Encoding.cs
 src\Sys.cs
@@ -24,7 +19,6 @@ src\haxe\Exception.cs
 src\haxe\io\Eof.cs
 src\Type.cs
 src\haxe\SysTools.cs
-src\sys\io\FileOutput.cs
 src\haxe\io\Error.cs
 src\haxe\iterators\ArrayIterator.cs
 src\Reflect.cs
@@ -44,7 +38,6 @@ src\EReg.cs
 src\cs\internal\HxObject.cs
 src\Math.cs
 src\cs\internal\FieldLookup.cs
-src\sys\io\File.cs
 src\haxe\io\BytesBuffer.cs
 src\cs\io\NativeInput.cs
 src\Console.cs

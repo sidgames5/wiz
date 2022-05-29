@@ -13,21 +13,9 @@ class WizPM {
 
 		switch (args[0]) {
 			case "install":
-				var plist = args.slice(1);
-				if (plist.length == 0) {
-					Console.log("Usage: wiz install [packages]");
+				if (args[1] == null) {
+					Console.log("Usage: wiz install <package>");
 					return;
-				}
-				for (pkg in plist) {
-					if (ProcessHandler.validatePackage(pkg)) {
-						var pkgi = ProcessHandler.fetchPackage(pkg);
-						var bin = ProcessHandler.downloadPackageInstaller(pkgi.downloadUrl);
-						File.saveContent("wiztemp.tmp.exe", bin);
-						ProcessHandler.runPackageInstaller("wiztemp.tmp.exe");
-					} else {
-						Console.warn("Unable to install package " + pkg + ": no package found in library");
-						return;
-					}
 				}
 		}
 		return;

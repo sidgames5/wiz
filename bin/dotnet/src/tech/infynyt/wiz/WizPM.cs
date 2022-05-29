@@ -43,10 +43,9 @@ namespace tech.infynyt.wiz {
 				}
 				
 				if (( global::tech.infynyt.wiz.WizPM.args[0] == "install" )) {
-					global::Array<string> plist = global::tech.infynyt.wiz.WizPM.args.slice(1, default(global::haxe.lang.Null<int>));
-					if (( plist.length == 0 )) {
+					if (( global::tech.infynyt.wiz.WizPM.args[1] == null )) {
 						{
-							string s1 = global::haxe.lang.Runtime.concat(global::Console.logPrefix, "Usage: wiz install [packages]");
+							string s1 = global::haxe.lang.Runtime.concat(global::Console.logPrefix, "Usage: wiz install <package>");
 							if (( s1 == null )) {
 								s1 = "";
 							}
@@ -55,34 +54,6 @@ namespace tech.infynyt.wiz {
 						}
 						
 						return;
-					}
-					
-					{
-						int _g = 0;
-						while (( _g < plist.length )) {
-							string pkg = plist[_g];
-							 ++ _g;
-							if (global::tech.infynyt.wiz.ProcessHandler.validatePackage(pkg)) {
-								object pkgi = global::tech.infynyt.wiz.ProcessHandler.fetchPackage(pkg);
-								string bin = global::tech.infynyt.wiz.ProcessHandler.downloadPackageInstaller(global::haxe.lang.Runtime.toString(global::haxe.lang.Runtime.getField(pkgi, "downloadUrl", 1643404487, true)));
-								global::sys.io.File.saveContent("wiztemp.tmp.exe", bin);
-								global::tech.infynyt.wiz.ProcessHandler.runPackageInstaller("wiztemp.tmp.exe");
-							}
-							else {
-								{
-									string s2 = global::haxe.lang.Runtime.concat(global::Console.warnPrefix, (global::haxe.lang.Runtime.concat("", (global::haxe.lang.Runtime.concat(global::haxe.lang.Runtime.concat("Unable to install package ", pkg), ": no package found in library")))));
-									if (( s2 == null )) {
-										s2 = "";
-									}
-									
-									global::Console.printFormatted(global::haxe.lang.Runtime.concat(s2, "\n"), new global::haxe.lang.Null<int>(((int) (1) ), true));
-								}
-								
-								return;
-							}
-							
-						}
-						
 					}
 					
 				}

@@ -6,12 +6,6 @@
 #ifndef INCLUDED_Sys
 #include <Sys.h>
 #endif
-#ifndef INCLUDED_sys_io_File
-#include <sys/io/File.h>
-#endif
-#ifndef INCLUDED_tech_infynyt_wiz_ProcessHandler
-#include <tech/infynyt/wiz/ProcessHandler.h>
-#endif
 #ifndef INCLUDED_tech_infynyt_wiz_WizPM
 #include <tech/infynyt/wiz/WizPM.h>
 #endif
@@ -54,39 +48,15 @@ HXDLIN(  35)				::Console_obj::printFormatted((s + HX_("\n",0a,00,00,00)),0);
 HXLINE(  11)			return;
             		}
 HXLINE(  14)		if ((::tech::infynyt::wiz::WizPM_obj::args->__get(0) == HX_("install",1b,d5,9a,8d))) {
-HXLINE(  16)			::Array< ::String > plist = ::tech::infynyt::wiz::WizPM_obj::args->slice(1,null());
-HXLINE(  17)			if ((plist->length == 0)) {
+HXLINE(  16)			if (::hx::IsNull( ::tech::infynyt::wiz::WizPM_obj::args->__get(1) )) {
 HXLINE(  35)				{
-HXLINE(  35)					::String s = (::Console_obj::logPrefix + HX_("Usage: wiz install [packages]",d9,5c,5b,ff));
+HXLINE(  35)					::String s = (::Console_obj::logPrefix + HX_("Usage: wiz install <package>",b0,0f,d7,65));
 HXDLIN(  35)					if (::hx::IsNull( s )) {
 HXLINE(  35)						s = HX_("",00,00,00,00);
             					}
 HXDLIN(  35)					::Console_obj::printFormatted((s + HX_("\n",0a,00,00,00)),0);
             				}
-HXLINE(  19)				return;
-            			}
-HXLINE(  21)			{
-HXLINE(  21)				int _g = 0;
-HXDLIN(  21)				while((_g < plist->length)){
-HXLINE(  21)					::String pkg = plist->__get(_g);
-HXDLIN(  21)					_g = (_g + 1);
-HXLINE(  22)					if (::tech::infynyt::wiz::ProcessHandler_obj::validatePackage(pkg)) {
-HXLINE(  23)						 ::Dynamic pkgi = ::tech::infynyt::wiz::ProcessHandler_obj::fetchPackage(pkg);
-HXLINE(  24)						::String bin = ::tech::infynyt::wiz::ProcessHandler_obj::downloadPackageInstaller(( (::String)(pkgi->__Field(HX_("downloadUrl",c7,5c,f4,61),::hx::paccDynamic)) ));
-HXLINE(  25)						::sys::io::File_obj::saveContent(HX_("wiztemp.tmp.exe",49,b6,e1,72),bin);
-HXLINE(  26)						::tech::infynyt::wiz::ProcessHandler_obj::runPackageInstaller(HX_("wiztemp.tmp.exe",49,b6,e1,72));
-            					}
-            					else {
-HXLINE(  40)						{
-HXLINE(  40)							::String s = (::Console_obj::warnPrefix + (HX_("",00,00,00,00) + ((HX_("Unable to install package ",b7,91,31,4e) + pkg) + HX_(": no package found in library",91,af,6c,fd))));
-HXDLIN(  40)							if (::hx::IsNull( s )) {
-HXLINE(  40)								s = HX_("",00,00,00,00);
-            							}
-HXDLIN(  40)							::Console_obj::printFormatted((s + HX_("\n",0a,00,00,00)),1);
-            						}
-HXLINE(  29)						return;
-            					}
-            				}
+HXLINE(  18)				return;
             			}
             		}
             	}

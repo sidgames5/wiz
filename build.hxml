@@ -2,3 +2,17 @@
 -lib Console.hx
 --main tech.infynyt.wiz.WizPM
 --cs bin/lib
+
+--next
+
+--class-path src
+-lib Console.hx
+--main tech.infynyt.wiz.WizPM
+--cpp bin/lib
+
+--next
+
+--class-path src
+-lib Console.hx
+--main tech.infynyt.wiz.WizPM
+--java bin/lib

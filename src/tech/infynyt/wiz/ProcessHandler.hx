@@ -7,11 +7,8 @@ import sys.Http;
 using tech.infynyt.wiz.Types;
 
 class ProcessHandler {
-	// PORTS
-	// the port used for receiving information about a package is 42155
-	// the port used for downloading a package is 43077
-	public static final PORT_RECEIVE = 42155;
-	public static final PORT_DOWNLOAD = 43077;
+	public static final PORT_RECEIVE = 16760;
+	public static final PORT_DOWNLOAD = 21413;
 
 	public static function fetchPackage(pkg:String):Package {
 		var request = new Http("http://96.235.29.196:" + PORT_RECEIVE + "/api/v1/packages/" + pkg);

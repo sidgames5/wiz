@@ -1,25 +1,29 @@
+--cmd echo Compiling dotnet...
 --class-path src
 -lib Console.hx
---main tech.infynyt.wiz.WizPM
+--main tech.infynyt.wiz.Wiz
 --cs bin/dotnet
 
 --next
 
+--cmd echo Compiling windows...
 --class-path src
 -lib Console.hx
---main tech.infynyt.wiz.WizPM
+--main tech.infynyt.wiz.Wiz
 --cpp bin/windows
 
 --next
 
+--cmd echo Compiling java...
 --class-path src
 -lib Console.hx
---main tech.infynyt.wiz.WizPM
+--main tech.infynyt.wiz.Wiz
 --java bin/cross/java
 
 --next
 
+--cmd echo Compiling hl...
 --class-path src
 -lib Console.hx
---main tech.infynyt.wiz.WizPM
---hl bin/cross/hl
+--main tech.infynyt.wiz.Wiz
+--hl bin/cross/wiz.hl

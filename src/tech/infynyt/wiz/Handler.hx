@@ -1,5 +1,8 @@
 package tech.infynyt.wiz;
 
+import tink.http.Header.HeaderField;
+import tink.Url;
+import tink.http.Client;
 import sys.Http;
 
 class Handler {
@@ -13,7 +16,7 @@ class Handler {
 		}
 		Console.success("Package found: " + name);
 		Console.log("Downloading package: " + name);
-		var binary = download(pkg);
+		var binary = Handler.download(pkg);
 		Console.debug(binary);
 		if (binary == null) {
 			Console.error("Package download failed: " + name);
@@ -48,18 +51,30 @@ class Handler {
 
 	public static function download(pkg:Package):String {
 		Console.debug("Downloading package: " + pkg.name);
-		var req = new Http(pkg.downloadUrl);
-		req.request();
-		req.onError = function(e:String) {
-			Console.error("Http request failed: " + e);
-			return null;
-		};
+
 		var output = null;
-		req.onData = function(data:String) {
-			Console.success("Http request success: " + data);
-			output = data;
-			return data;
-		};
+
+		// var req = new Http(pkg.downloadUrl);
+		// req.request();
+		// req.onError = function(e:String) {
+		// 	Console.error("Http request failed: " + e);
+		// 	return null;
+		// };
+		// req.onData = function(data:String) {
+		// 	Console.success("Http request success: " + data);
+		// 	output = data;
+		// 	return data;
+		// };
+		Client.fetch(pkg.downloadUrl, {
+			headers: [HeaderField.ofString("content-length")],
+		}).all().handle(function(o) switch o {
+			case Success(res):
+				Console.debug(res.header.statusCode);
+				var data = res.body.toString();
+				output = data;
+			case Failure(e):
+				Console.error("Http request failed: " + e);
+		});
 		return output;
 	}
 
